@@ -1,0 +1,83 @@
+;; Look & feel
+(setq inhibit-startup-screen t)
+(set-default-font "ProggyCleanTT-12")
+(scroll-bar-mode -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(setq display-time-default-load-average nil)
+(setq display-time-day-and-date t
+      display-time-24hr-format t)
+(display-time)
+(transient-mark-mode 1)
+(show-paren-mode 1)
+(setq-default indicate-buffer-boundaries 'left)
+(setq-default indicate-empty-lines +1)
+(setq-default indent-tabs-mode nil)
+
+;; ido-mode
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+;; auto-package
+(add-to-list 'load-path "~/.emacs.d/auto-package")
+(require 'auto-package)
+
+;; nyan-cat
+(add-to-list 'load-path "~/.emacs.d/nyan-mode")
+(require 'nyan-mode)
+(nyan-mode)
+
+;; theme
+(load-theme 'zenburn t)
+
+;; yasnippet
+(yas-global-mode 1)
+
+;; expand-region
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+;; wgrep
+(require 'wgrep)
+
+;; dired listing using human readable sizes
+(setq dired-listing-switches "-alh")
+
+;; cmake
+(require 'cmake-mode)
+
+;; bb-mode
+(add-to-list 'load-path "~/.emacs.d/bb-mode")
+(require 'bb-mode)
+(setq auto-mode-alist (cons '("\\.bb$" . bb-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.inc$" . bb-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.bbappend$" . bb-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.bbclass$" . bb-mode) auto-mode-alist))
+
+;; C++ hook
+(defun my-c++-mode-hook ()
+  (setq c-basic-offset 3)
+  (c-set-offset 'substatement-open 0)
+  (setq c-default-style "bsd"))
+(add-hook 'c++-mode-hook 'my-c++-mode-hook)
+
+;; C hook
+(defun my-c-mode-hook ()
+  (setq c-basic-offset 3)
+  (c-set-offset 'substatement-open 0)
+  (setq c-default-style "bsd"))
+(add-hook 'c-mode-hook 'my-c-mode-hook)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
