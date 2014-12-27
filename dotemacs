@@ -1,3 +1,4 @@
+
 ;; Look & feel
 (setq inhibit-startup-screen t)
 (set-default-font "ProggyCleanTT-12")
@@ -59,14 +60,17 @@
 (defun my-c++-mode-hook ()
   (setq c-basic-offset 3)
   (c-set-offset 'substatement-open 0)
-  (setq c-default-style "bsd"))
+  (setq c-default-style "bsd")
+  (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
 ;; C hook
 (defun my-c-mode-hook ()
   (setq c-basic-offset 3)
   (c-set-offset 'substatement-open 0)
-  (setq c-default-style "bsd"))
+  (setq c-default-style "bsd")
+  (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 
 (global-set-key (kbd "C-.") 'other-window)
+(global-auto-revert-mode t)
