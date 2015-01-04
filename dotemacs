@@ -61,6 +61,7 @@
   (setq c-basic-offset 3)
   (c-set-offset 'substatement-open 0)
   (setq c-default-style "bsd")
+  (setq show-trailing-whitespace t)
   (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
@@ -69,8 +70,20 @@
   (setq c-basic-offset 3)
   (c-set-offset 'substatement-open 0)
   (setq c-default-style "bsd")
+  (setq show-trailing-whitespace t)
   (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 
 (global-set-key (kbd "C-.") 'other-window)
 (global-auto-revert-mode t)
+
+;; AUCTex
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
+(setq TeX-PDF-mode t)
