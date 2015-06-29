@@ -7,6 +7,7 @@
 
 (defvar autop-packages
   '(auctex
+    anzu
     expand-region
     magit
     cmake-mode
