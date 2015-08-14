@@ -71,7 +71,8 @@
   (c-set-offset 'substatement-open 0)
   (setq c-default-style "bsd")
   (setq show-trailing-whitespace t)
-  (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
+  (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))
+  (setq flycheck-gcc-language-standard "gnu99"))
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 
 (global-set-key (kbd "C-.") 'other-window)
