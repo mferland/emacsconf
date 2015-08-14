@@ -8,13 +8,15 @@ unzip -o ProggyClean.ttf.zip
 rm ProggyClean.ttf.zip
 cd -
 
-mkdir $HOME/.emacs.d
+mkdir -p $HOME/.emacs.d
 
 install -m0644 ./dotemacs $HOME/.emacs
 install -d ~/.emacs.d/auto-package
 install -m0644 ./auto-package.el $HOME/.emacs.d/auto-package
 
 cd $HOME/.emacs.d
+rm -rf bb-mode
+rm -rf nyan-mode
 git clone https://github.com/TeMPOraL/nyan-mode.git
 git clone https://github.com/mferland/bb-mode.git
 cd -

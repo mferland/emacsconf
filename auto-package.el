@@ -13,6 +13,7 @@
     cmake-mode
     yasnippet
     wgrep
+    flycheck
     zenburn-theme)
   "A list of packages to install at launch.")
 
