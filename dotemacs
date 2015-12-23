@@ -97,3 +97,9 @@
 
 ;; magit
 (setq magit-last-seen-setup-instructions "1.4.0")
+
+;; helm
+(add-to-list 'load-path "~/.emacs.d/async")
+(add-to-list 'load-path "~/.emacs.d/helm")
+(require 'helm-config)
+(helm-mode 1)

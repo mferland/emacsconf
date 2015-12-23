@@ -4,16 +4,17 @@
 
 (add-to-list 'package-archives
              '("marmalade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
 
 (defvar autop-packages
-  '(auctex
-    anzu
-    expand-region
-    magit
+  '(anzu
+    auctex
     cmake-mode
-    yasnippet
-    wgrep
+    expand-region
     flycheck
+    wgrep
+    yasnippet
     zenburn-theme)
   "A list of packages to install at launch.")
 
