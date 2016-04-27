@@ -30,7 +30,7 @@
   (nyan-mode))
 
 ;; theme
-(load-theme 'zenburn t)
+(load-theme 'tango-dark t)
 
 ;; yasnippet
 (yas-global-mode 1)
